@@ -1,5 +1,7 @@
 import { fixture } from "../helpers/fixture";
 import { expect} from '@playwright/test';
+import fs from 'fs';
+
 
 
 
@@ -55,9 +57,19 @@ export class loginPage {
 
    async verifyUrl(val: string) {
       expect(await fixture.page.url()).toContain(val);
+    
+
+   }
+
+    async visualTest() {
+
+
+      const screenshot = await fixture.page.screenshot();
+     fs.writeFileSync('rooms.png', screenshot);
       await fixture.page.waitForTimeout(3000);
 
    }
+
 
 
    async singleRoom() {
