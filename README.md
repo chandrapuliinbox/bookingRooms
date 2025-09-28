@@ -6,3 +6,5 @@ run tests
 4. do np run test
 
 (last scenario i had to omit some steps due to server issue)
+note:
+to run visual test run npx playwright test compareTests.spec.js --headed
