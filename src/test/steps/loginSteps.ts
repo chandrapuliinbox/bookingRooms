@@ -1,24 +1,18 @@
 
 import { Given, When, Then } from '@cucumber/cucumber';
-import { fixture } from '../helpers/fixture';
 import { loginPage } from '../pageObjects/loginPage';
 
 
 
-// let browser:Browser;
-// let context:BrowserContext;
-
 const loginpage = new loginPage();
 
 Given('User navigates to the practice application', async function () {
-  console.log("one")
   await loginpage.asstpage();
 });
 
 
 
 Given('User click on book now button on hero section', async function () {
-
   await loginpage.clickBookNow();
 });
 
@@ -28,7 +22,9 @@ Given('User click on book now button on hero section', async function () {
 
 Given('i verify user is navigated and url contains {string}', async function (string) {
   await loginpage.verifyUrl(string);
-});
+  
+  });
+
 
 
 
@@ -39,19 +35,16 @@ Given('User chooses a room type and clicks book now', async function () {
 
 
 When('page has title {string}', async function (string) {
-
   await loginpage.verifyTitle(string);
 });
 
 
 
 Then('calendar is displayed', async function () {
-
   await loginpage.calDisplayed();
 });
 
 Then('enter checkin {string} and checkout dates {string}', async function (str1: string, str2: string) {
-
   await loginpage.enterDates(str1, str2);
 });
 
