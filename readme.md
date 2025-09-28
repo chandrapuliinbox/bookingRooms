@@ -6,3 +6,6 @@ run tests
 4. do np run test
 
 (last scenario i had to omit some steps due to server issue)
+
+to test visual testing of scneario 1 run 
+npx playwright test compareTests.spec.js --headed from terminal
